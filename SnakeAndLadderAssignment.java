@@ -27,9 +27,22 @@ public class SnakeAndLadderAssignment {
 				System.out.println("Position of player after climbing ladder is " + position);
 				break;
 			case 2:
-				position = position - getRandom;
-				System.out.println("Position of player after stepping on snake  is " + position);
-				break;
+				if (position - getRandom <= 0) {
+					position = 0;
+				} else {
+					position = position - getRandom;
+					System.out.println("Position of player after stepping on snake  is " + position);
+					break;
+				}
+
+				if (position > 100) { // if position is greater than 100 it will roll back to previous value
+					position = position - getRandom;
+				} else if (position == 100) {
+					System.out.println("Player wins");
+					break;
+				} else {
+					position = position;
+				}
 			}
 		}
 	}
