@@ -12,22 +12,25 @@ public class SnakeAndLadderAssignment {
 	}
 
 	void checkOption() {
-		int getRandom = getDiceRollNumber();
-		int randomOption = random.nextInt(3);
-		System.out.println("Number received after rolling dice is" + getRandom);
-		switch (randomOption) {
-		case 0:
-			position = position;
-			System.out.println("Position of player at no play is " + position);
-			break;
-		case 1:
-			position = position + getRandom;
-			System.out.println("Position of player after climbing ladder is " + position);
-			break;
-		case 2:
-			position = position - getRandom;
-			System.out.println("Position of player after stepping on snake  is " + position);
-			break;
+
+		while (position <= 100) {
+			int getRandom = getDiceRollNumber();
+			int randomOption = random.nextInt(3);
+			System.out.println("Number received after rolling dice is" + getRandom);
+			switch (randomOption) {
+			case 0:
+				position = position;
+				System.out.println("Position of player at no play is " + position);
+				break;
+			case 1:
+				position = position + getRandom;
+				System.out.println("Position of player after climbing ladder is " + position);
+				break;
+			case 2:
+				position = position - getRandom;
+				System.out.println("Position of player after stepping on snake  is " + position);
+				break;
+			}
 		}
 	}
 
@@ -35,8 +38,7 @@ public class SnakeAndLadderAssignment {
 		System.out.println("Welcome to the Snake and Ladder Game:");
 
 		SnakeAndLadderAssignment object = new SnakeAndLadderAssignment(); /** Object creation */
-		object.getDiceRollNumber(); /*** Calling method */
-		object.checkOption();
+		object.checkOption(); /*** Calling method */
 
 	}
 
